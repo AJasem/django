@@ -13,4 +13,7 @@ deactivate
  python manage.py startapp pages
  <!-- to create an app -->
  after we init an app we make a urls.py file and make the view for it and then include it in the main project urls.py
+
+
+ use the {% url '' %} tag to link pages 
  
