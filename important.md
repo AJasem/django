@@ -8,3 +8,7 @@ deactivate
  <!-- to start a project btre in the correct dir -->
  gitignore.io
  <!-- to git ignore for a frame work -->
+ python manage.py runserver  
+ <!-- to run the server -->
+ python manage.py startapp pages
+ <!-- to create an app -->
