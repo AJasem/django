@@ -34,3 +34,7 @@ deactivate
 
  <!-- to create a super user  -->
   python manage.py createsuperuser
+  <!-- to add the model to the admin area we use this -->
+  from .models import Listing
+
+admin.site.register(Listing)
