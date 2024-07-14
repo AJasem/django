@@ -28,8 +28,10 @@ class Listing(models.Model):
     photo_6 = models.ImageField(upload_to='photos/%y/%m/%d/',blank=True)
     is_published = models.BooleanField(default=True)
     list_date = models.DateTimeField(default=datetime.now,blank=True)
-    def __ste__(self):
+    
+    def __str__(self):
         return self.title
+
 # this methode to return the main feild in the admin aria 
 
 
