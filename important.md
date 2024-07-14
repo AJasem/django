@@ -38,3 +38,8 @@ deactivate
   from .models import Listing
 
 admin.site.register(Listing)
+<!-- for the media files we shoud add this to the main settings.py -->
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+<!-- we should also add this to the main urls.py -->
++ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) and import settings and static from the django.conf
