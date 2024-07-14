@@ -16,4 +16,13 @@ deactivate
 
 
  use the {% url '' %} tag to link pages 
- 
+
+
+ pip install psycopg2
+ pip install psycopg2-binary
+ this is for postgresql 
+ then we change the databases in setting.py to postgresql and our db with host and pass
+
+
+ <!-- this ins for migration  -->
+ python manage.py migrate
