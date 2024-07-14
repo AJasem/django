@@ -31,3 +31,6 @@ deactivate
  <!-- to make migrations after making the models  -->
  python manage.py makemigrations
  then python manage.py migrate
+
+ <!-- to create a super user  -->
+  python manage.py createsuperuser
