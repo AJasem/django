@@ -26,3 +26,8 @@ deactivate
 
  <!-- this ins for migration  -->
  python manage.py migrate
+ <!-- we have to install pillow when we use imagefield -->
+ pip install Pillow
+ <!-- to make migrations after making the models  -->
+ python manage.py makemigrations
+ then python manage.py migrate
