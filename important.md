@@ -43,3 +43,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 <!-- we should also add this to the main urls.py -->
 + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) and import settings and static from the django.conf
+
+<!-- to customize the admin page  -->
+make a admin folder inside the template
+make a html file base_site.html
+extend the admin/base.html
+make a block branding
+for the css make a block with extrastyle
+then we make admin.css file inside the main pro static css 
