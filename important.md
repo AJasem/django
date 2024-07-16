@@ -51,3 +51,8 @@ extend the admin/base.html
 make a block branding
 for the css make a block with extrastyle
 then we make admin.css file inside the main pro static css 
+
+<!-- to customaize the admin area for listing or realtor  -->
+make a class called ListingAdmin and pass it with the register
+this class takes a param of admin.modelAdmin
+then we can use list_
