@@ -56,3 +56,9 @@ then we make admin.css file inside the main pro static css
 make a class called ListingAdmin and pass it with the register
 this class takes a param of admin.modelAdmin
 then we can use list_
+
+<!-- view and pulling data from the database  -->
+ to get the data from the database in the view first we import the model then we use
+ this listings = Listing.objects.all()
+ and pass it with the render html
+ then there we loop through it 
