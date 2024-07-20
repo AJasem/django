@@ -66,4 +66,6 @@ then we can use list_
  we load the humanize in the template and add it to the installed apps 
  in the settings 
  then use intcomma
- 
+
+ <!-- to get a listing by a primarykey -->
+ listing = get_object_or_404(Listing, pk=listing_id)
