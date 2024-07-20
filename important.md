@@ -62,3 +62,8 @@ then we can use list_
  this listings = Listing.objects.all()
  and pass it with the render html
  then there we loop through it 
+ <!-- to add a comma to the price -->
+ we load the humanize in the template and add it to the installed apps 
+ in the settings 
+ then use intcomma
+ 
