@@ -27,6 +27,8 @@ def listing(request,listing_id):
    }
    return render(request,'listings/listing.html', context)
 
+
+
 def search(request):
    queryset_list = Listing.objects.order_by('-list_date')
    # keywords
