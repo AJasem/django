@@ -1,25 +1,33 @@
 from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
+import logging
+
+logger = logging.getLogger(__name__)
 
 def contact(request):
-   if request.method == 'POST':
-      listing_id = request.POST['listing_id']
-      listing = request.POST['listing']
-      name = request.POST['name']
-      email = request.POST['email']
-      phone = request.POST['phone']
-      message = request.POST['message']
-      user_id = request.POST['user_id']
-      realtor_email = request.POST['realtor_email']
+    if request.method == 'POST':
+            listing_id = request.POST['listing_id']
+            listing = request.POST.get('listing', '')
+            name = request.POST['name']
+            email = request.POST['email']
+            phone = request.POST.get('phone', '')
+            message = request.POST.get('message', '')
+            user_id = request.POST.get('user_id', None)
+            realtor_email = request.POST.get('realtor_email', '')
 
-      contact = Contact(listing=listing, listing_id=listing_id,
-                   name=name, email=email, phone=phone,
-                   message=message, user_id=user_id)
-      contact.save()
-   
-      messages.success(request,'Your request has been submitted, a realtor will get back to you soon!')
-      return redirect('/listings/'+listing_id)
+            contact = Contact(
+                listing=listing,
+                listing_id=listing_id,
+                name=name,
+                email=email,
+                phone=phone,
+                message=message,
+                user_id=user_id
+            )
+            contact.save()
 
+            messages.success(request, 'Your request has been submitted, a realtor will get back to you soon!')
+            return redirect('/listings/' + listing_id)
 
-      
+        
