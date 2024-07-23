@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
-import logging
-
-logger = logging.getLogger(__name__)
+from django.utils import timezone
+from django.core.mail import send_mail
 
 def contact(request):
     if request.method == 'POST':
@@ -35,6 +34,22 @@ def contact(request):
                 user_id=user_id
             )
             contact.save()
+            send_mail(
+                'Property Listing Inquiry',
+                f'There has been an inquiry for {listing}. Sign into the admin panel for more info.',
+                'contact@ahmads.dev',
+                ['ajassem.ahmad@gmail.com'],
+                fail_silently=False,
+            )
+            send_mail(
+                  'Confirmation Notice',
+                  f'Thank you {name} for you interest in {listing} property, an agent will get back to you soon!',
+                  'contact@ahmads.dev',
+                  [email],
+                  fail_silently=False
+            )
+
+
 
             messages.success(request, 'Your request has been submitted, a realtor will get back to you soon!')
             return redirect('/listings/' + listing_id)
